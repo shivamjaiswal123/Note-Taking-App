@@ -32,8 +32,8 @@
 
             <ImageView
                 android:id="@+id/btnDelete"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
                 android:src="@drawable/close"/>
 
         </LinearLayout>

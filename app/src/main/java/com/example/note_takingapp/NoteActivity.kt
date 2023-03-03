@@ -1,5 +1,6 @@
 package com.example.note_takingapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,8 @@ import com.example.note_takingapp.architecture.NotesViewModel
 import com.example.note_takingapp.model.Note
 import com.example.note_takingapp.utils.ColorPicker
 import kotlinx.android.synthetic.main.activity_note.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class NoteActivity : AppCompatActivity() {
     lateinit var viewModel: NotesViewModel
@@ -61,8 +64,10 @@ class NoteActivity : AppCompatActivity() {
     private fun insertNote() {
         val title = et_title.text.toString()
         val note = et_note.text.toString()
+        val cardColor = ColorPicker.getColor()
+        val date = getDate()
         if (inputCheck(title, note)) {
-            viewModel.insertNote(this, Note(title, note))
+            viewModel.insertNote(this, Note(title, note, cardColor, date))
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Note Added !!!", Toast.LENGTH_LONG).show()
@@ -76,5 +81,12 @@ class NoteActivity : AppCompatActivity() {
             return false
         }
         return true
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun getDate(): String {
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm")
+        val currentDate = sdf.format(Date())
+        return currentDate
     }
 }
