@@ -1,6 +1,8 @@
 # Note-Taking-App
-A Note App with clean architecture
+### Overview :
+A Note Taking App with clean architecture that can be used for taking notes.
 
+<br><br>
 
 ![Screenshot 1](https://user-images.githubusercontent.com/69350516/222816250-117a681a-4722-4047-b380-927be5f3db38.jpg)
 ![Screenshot 2](https://user-images.githubusercontent.com/69350516/222816614-7c8befa0-23d7-4e4c-b34a-460cb3ae53d6.jpg)
